@@ -137,13 +137,13 @@ VALUES
 
 
 SELECT Employee_ID
-FROM 
-(
-SELECT Employee_ID , Event_Type_ID
-FROM Audit_Log 
-WHERE Event_Type_ID = 5
-)
-
+FROM Audit_Log
 GROUP BY Employee_ID
-Having COUNT(Event_Type_ID) >= 1;
+Having Event_Type_ID = 
+(
+SELECT Event_Type_ID
+FROM Event_Types
+WHERE Event_Type = "Share"
+)
+AND COUNT(Event_Type_ID) >= 1;
 ```
