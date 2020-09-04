@@ -348,7 +348,20 @@ Example Answer: A temporary table in SQL Server, as the name suggests, is a data
 
 You can use it by specifying the Table Name, Column Names, and Data Types of you Temp Table and then storing data into that table. You can then query the temp table to look at that data.
 
+ --- 
  
+## SQL query challenges I've seen in interviews:
+
+1. Determine the number of duplicates in a table.
+2. Find all unique combination of two rows.
+3. Count the number of non-null entries in a column.
+4. When to use group by vs. distinct.
+5. Why use coalesce vs case statements?
+6. When would you choose a left join over an inner join?
+7. In what cases is a subquery a bad idea?
+8. Why is a temp table a good idea? Bad idea?
+9. Rank()
+
 
  
 
