@@ -362,8 +362,42 @@ You can use it by specifying the Table Name, Column Names, and Data Types of you
 8. Why is a temp table a good idea? Bad idea?
 9. Rank()
 
+---
 
- 
+Write a SQL query to find all duplicate emails in a table named  **Person**.
+| Id | Email   |
+|---|---|
+| 1  | a@b.com |
+| 2  | c@d.com |
+| 3  | a@b.com |
+
+
+For example, your query should return the following for the above table:
+
+| Email   |
+|---|
+| a@b.com |
+
+
+- Approach-1 : Groupby duplicate column and display the ones whose count is more than 1
+but it will display the dulicate email more than once hence we need to use the keyword Distinct to curb that effect.
+
+code : 
+'''
+select email
+from person
+groupby email
+having count(email) > 1
+'''
+- Approach-2: self join the same table and use the column id to detect the duplicates
+
+code:
+'''
+select p1.email
+from person p1, person p2
+where p1.email = p2.email and p1.Id != p2.Id
+'''
+
 
  
 
